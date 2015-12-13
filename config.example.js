@@ -1,9 +1,9 @@
 module.exports = {
-	target: {
-		user: 'user',
-		repo: 'repo'
-	},
-	token: '',
-	port: 1234,
-	secret: null
+    target: {
+        user: 'SickRage',
+        repo: 'SickRage'
+    },
+    token: '',
+    port: 1234,
+    secret: null
 };

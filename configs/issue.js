@@ -44,7 +44,7 @@ module.exports = {
         },
         // Wrap inline logs inside ```
         {
-            message: 'Please wrap inline logs inside \`\`\` and \`\`\` for readability',
+            message: 'Please wrap inline logs inside \\`\\`\\` and \\`\\`\\` for readability',
             condition: function (data) {
                 var inline_logs = isInlineLog(data.issue.body);
 
@@ -56,10 +56,6 @@ module.exports = {
 };
 
 function isInlineLog(data) {
-    var inline_logs = 0;
-    _.each(['ERROR [', 'INFO [', 'DEBUG ['], function(check_for) {
-        inline_logs += _.contains(data, check_for) ? 1 : 0;
-    });
-
-    return inline_logs > 0;
+    var reg = /\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\s+(DEBUG|WARNING|INFO|DB|ERROR)\s+[\w-]+\s+::\s+|AA  File/g;
+    return data.match(reg) ? true : false;
 }

@@ -16,12 +16,12 @@ module.exports = function initPlugin(events) {
         // Responde to the item with checklist
         var respondeTo = function(data) {
             var number = checklist_options.getNumber(data);
-
+            var repo = data.repository.name;
             return responseBody(data).
                 then(function (body) {
                     github.issues.createComment({
                         'user': config.target.user,
-                        'repo': config.target.repo,
+                        'repo': repo,
                         'number': number,
                         'body': body
                     }, function(err, result) {

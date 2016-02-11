@@ -29,7 +29,7 @@ module.exports = {
         },
         // Post logs
         {
-            message: 'Post debug logs, either inline (for smaller logs) or using gist)',
+            message: 'Post debug logs, either inline (for smaller logs) or using gist',
             condition: function (data) {
 
                 var inline_logs = isInlineLog(data.issue.body);

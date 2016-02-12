@@ -1,0 +1,16 @@
+language: node_js
+
+node_js:
+  - "5.0.0"
+
+install:
+  - npm install -g jshint
+
+script:
+  - jshint app.js configs helpers
+ 
+notifications:
+  irc: "irc.freenode.net#sickrage-builds"
+  email:
+    on_success: change
+    on_failure: change

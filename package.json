@@ -1,20 +1,39 @@
 {
-	"name": "autoresponder",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"start": "node app.js"
-	},
-	"dependencies": {
-		"github": ">= 0.2.3",
-		"lodash": "~2.4.1",
-		"q":  ">= 1.0.1",
-		"express-x-hub": ">= 1.0.2",
-		"github": ">= 0.2.2",
-		"express": ">= 4.9.7",
-		"redis": ">= 0.12.1",
-		"compression": ">= 1.1.1",
-		"body-parser": ">= 1.9.0",
-		"winston": ">= 0.8.1"
-	}
+  "name": "SickRageBot",
+  "description": "PR and Issue auto commenter for SickRage on github",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "test": "grunt"
+  },
+  "dependencies": {
+    "body-parser": ">= 1.9.0",
+    "compression": ">= 1.1.1",
+    "express": ">= 4.9.7",
+    "express-x-hub": ">= 1.0.2",
+    "github": ">= 0.2.2",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-jshint": "^0.12.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "lodash": "~2.4.1",
+    "q": ">= 1.0.1",
+    "redis": ">= 0.12.1",
+    "winston": ">= 0.8.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SickRage/SickRageBot.git"
+  },
+  "keywords": [
+    "SickRage",
+    "SickRageBot"
+  ],
+  "author": "miigotu",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/SickRage/SickRageBot/issues"
+  },
+  "homepage": "https://github.com/SickRage/SickRageBot#readme"
 }

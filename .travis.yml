@@ -4,10 +4,7 @@ node_js:
   - "5.0.0"
 
 install:
-  - npm install -g jshint
-
-script:
-  - jshint app.js configs helpers
+  - npm install
  
 notifications:
   irc: "irc.freenode.net#sickrage-builds"

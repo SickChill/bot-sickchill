@@ -13,16 +13,14 @@ module.exports = function initPlugin(events) {
             checks: []
         });
 
-        // Responde to the item with checklist
-        var respondeTo = function(data) {
-            var number = checklist_options.getNumber(data);
-            var repo = data.repository.name;
+        // Respond to the item with checklist
+        var respondTo = function(data) {
             return responseBody(data).
                 then(function (body) {
                     github.issues.createComment({
                         'user': config.target.user,
-                        'repo': repo,
-                        'number': number,
+                        'repo': data.repository.name,
+                        'number': checklist_options.getNumber(data),
                         'body': body
                     }, function(err, result) {
                         winston.info(result);
@@ -30,9 +28,18 @@ module.exports = function initPlugin(events) {
                 });
         };
 
+        var deprecatedRepos = {
+            'sickrage-issues': 'This repository is no longer in use for issues or wiki, ' +
+            'please use the main repo for [Issues](https://github.com/SickRage/SickRage/issues) ' +
+            'and the [Wiki](https://github.com/SickRage/SickRage/wiki)'
+        };
+
         // Create the body based on the checklist
         var responseBody = function(data) {
             return checklist(data).then(function (list) {
+                if (data.repository.name in deprecatedRepos) {
+                    return deprecatedRepos[data.repository.name];
+                }
                 return list ? Q.all([checklist_options.before, list, checklist_options.after]) : null;
             }).
                 then(function (paragraphs) {
@@ -56,7 +63,7 @@ module.exports = function initPlugin(events) {
                 });
         };
         // Add it to poppins
-        pubsub.on(event_name, respondeTo);
+        pubsub.on(event_name, respondTo);
     });
 };
 
@@ -113,7 +120,7 @@ function getPullTestData() {
             "default_branch": "master"
         },
         "sender": {
-            "login": "CouchPotatoBot"
+            "login": "SickRage2"
         }
     };
 }

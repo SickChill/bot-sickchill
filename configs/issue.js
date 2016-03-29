@@ -23,7 +23,7 @@ module.exports = {
                 condition: function (data) {
                         var inline_logs = isInlineLog(data.issue.body);
                         if(inline_logs)
-                                return _.contains(data.issue.body, 'DEBUG [');
+                            return _.contains(data.issue.body, 'DEBUG [');
                         return 0;
                 }
         },

@@ -38,9 +38,10 @@ module.exports = function initPlugin(events) {
         var responseBody = function(data) {
             return checklist(data).then(function (list) {
                 if (data.repository.name in deprecatedRepos) {
-                    return deprecatedRepos[data.repository.name];
+                    return Q.all([deprecatedRepos[data.repository.name]]);
+                } else {
+                    return list ? Q.all([checklist_options.before, list, checklist_options.after]) : null;
                 }
-                return list ? Q.all([checklist_options.before, list, checklist_options.after]) : null;
             }).
                 then(function (paragraphs) {
                     return paragraphs.join('\n\n');

@@ -5,7 +5,9 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "test": "grunt"
+    "test": "grunt",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "body-parser": ">= 1.9.0",
@@ -20,7 +22,8 @@
     "lodash": "~2.4.1",
     "q": ">= 1.0.1",
     "redis": ">= 0.12.1",
-    "winston": ">= 0.8.1"
+    "winston": ">= 0.8.1",
+    "snyk": "^1.189.0"
   },
   "repository": {
     "type": "git",
@@ -35,5 +38,6 @@
   "bugs": {
     "url": "https://github.com/SickRage/SickRageBot/issues"
   },
-  "homepage": "https://github.com/SickRage/SickRageBot#readme"
+  "homepage": "https://github.com/SickRage/SickRageBot#readme",
+  "snyk": true
 }

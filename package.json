@@ -5,7 +5,9 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "test": "grunt"
+    "test": "grunt",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "body-parser": ">= 1.9.0",
@@ -13,14 +15,15 @@
     "express": ">= 4.9.7",
     "express-x-hub": ">= 1.0.2",
     "github": ">= 0.2.2",
-    "grunt": "^0.4.5",
-    "grunt-cli": "^0.1.13",
+    "grunt": "^1.0.4",
+    "grunt-cli": "^1.3.0",
     "grunt-contrib-jshint": "^0.12.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "lodash": "~2.4.1",
+    "grunt-contrib-watch": "^1.0.1",
+    "lodash": "~4.17.12",
     "q": ">= 1.0.1",
     "redis": ">= 0.12.1",
-    "winston": ">= 0.8.1"
+    "winston": ">= 0.8.1",
+    "snyk": "^1.307.0"
   },
   "repository": {
     "type": "git",
@@ -35,5 +38,6 @@
   "bugs": {
     "url": "https://github.com/SickRage/SickRageBot/issues"
   },
-  "homepage": "https://github.com/SickRage/SickRageBot#readme"
+  "homepage": "https://github.com/SickRage/SickRageBot#readme",
+  "snyk": true
 }

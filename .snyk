@@ -6,3 +6,22 @@ patch:
   'npm:qs:20140806-1':
     - grunt-contrib-watch > tiny-lr-fork > qs:
         patched: '2020-04-22T11:55:49.596Z'
+  SNYK-JS-LODASH-567746:
+    - lodash:
+        patched: '2020-05-01T05:30:40.141Z'
+    - grunt-contrib-watch > lodash:
+        patched: '2020-05-01T05:30:40.141Z'
+    - grunt > grunt-legacy-log > lodash:
+        patched: '2020-05-01T05:30:40.141Z'
+    - grunt > grunt-legacy-util > lodash:
+        patched: '2020-05-01T05:30:40.141Z'
+    - grunt-contrib-jshint > jshint > lodash:
+        patched: '2020-05-01T05:30:40.141Z'
+    - grunt-contrib-watch > async > lodash:
+        patched: '2020-05-01T05:30:40.141Z'
+    - winston > async > lodash:
+        patched: '2020-05-01T05:30:40.141Z'
+    - grunt > grunt-legacy-log > grunt-legacy-log-utils > lodash:
+        patched: '2020-05-01T05:30:40.141Z'
+    - grunt-contrib-watch > gaze > globule > lodash:
+        patched: '2020-05-01T05:30:40.141Z'
